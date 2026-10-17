@@ -91,15 +91,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .map img{position:absolute;inset:0;width:100%;height:100%;display:block;filter:var(--map-filter);user-select:none;-webkit-user-drag:none}
 .mapz{position:absolute;inset:0;transform-origin:0 0}
 .map{touch-action:pan-y;cursor:default} .map.zoomed{touch-action:none;cursor:grab} .map.dragging{cursor:grabbing} .map.dragging .mapz{transition:none}
-.map .pin{scale:calc(1 / var(--z,1));transform-origin:17px 50%}
-.map .pin.lbl-left{transform-origin:calc(100% - 17px) 50%}
-.map .pin.venue{transform-origin:9px 50%} .map .pin.venue.lbl-left{transform-origin:calc(100% - 9px) 50%}
-.map .pin.hot,.map .pin.brand{transform-origin:10px 50%} .map .pin.hot.lbl-left,.map .pin.brand.lbl-left{transform-origin:calc(100% - 10px) 50%}
+.map .pin{scale:calc(1 / var(--z,1));transform-origin:0 0}
+.map .pin.lbl-left{transform-origin:0 0}
+.map .pin.venue{transform-origin:0 0} .map .pin.venue.lbl-left{transform-origin:0 0}
+.map .pin.hot,.map .pin.brand{transform-origin:0 0} .map .pin.hot.lbl-left,.map .pin.brand.lbl-left{transform-origin:0 0}
 .zctl{position:absolute;right:12px;top:12px;z-index:10;display:grid;border:1px solid var(--line);background:var(--bg)}
 .zctl button{width:36px;height:34px;border:0;border-bottom:1px solid var(--line);background:var(--bg);color:var(--fg);font-size:18px;line-height:1;cursor:pointer;font-weight:600} .zctl button:last-child{border-bottom:0;font-size:15px}
 .zctl button:hover{background:var(--accent);color:var(--on-accent)}
 .zhint{position:absolute;left:10px;bottom:10px;z-index:10;font-size:10.5px;letter-spacing:.04em;background:var(--bg);border:1px solid var(--line);padding:3px 8px;color:var(--muted);pointer-events:none}
-@media (max-width:700px){ .map .pin{transform-origin:14px 50%} .map .pin.venue{transform-origin:7px 50%} .map .pin.hot,.map .pin.brand{transform-origin:8px 50%} }
+@media (max-width:700px){ .map .pin{transform-origin:0 0} .map .pin.venue{transform-origin:0 0} .map .pin.hot,.map .pin.brand{transform-origin:0 0} }
 .zone{position:absolute;width:8%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, var(--c) 0%, transparent 68%);opacity:.26;transform:translate(-50%,-50%);pointer-events:none;transition:opacity .2s,transform .2s}
 .zone.on{opacity:.5;transform:translate(-50%,-50%) scale(1.25)}
 .pin{position:absolute;transform:translate(-17px,-50%);display:flex;align-items:center;gap:7px;background:none;border:0;padding:0;cursor:pointer;z-index:2;transition:opacity .2s}
@@ -208,12 +208,12 @@ footer a{text-decoration:none} footer a:hover{color:var(--fg)}
 .cc .pill.b{border-style:dashed}
 
 /* pin box = dot only; label floats outside so hover never moves the pin */
-.map .pin,.map .pin.lbl-left{flex-direction:row;transform:translate(-17px,-50%);transform-origin:17px 50%}
-.map .pin.venue,.map .pin.venue.lbl-left{transform:translate(-9px,-50%);transform-origin:9px 50%}
-.map .pin.hot,.map .pin.hot.lbl-left,.map .pin.brand,.map .pin.brand.lbl-left{transform:translate(-10px,-50%);transform-origin:10px 50%}
+.map .pin,.map .pin.lbl-left{flex-direction:row;transform:translate(-17px,-50%);transform-origin:0 0}
+.map .pin.venue,.map .pin.venue.lbl-left{transform:translate(-9px,-50%);transform-origin:0 0}
+.map .pin.hot,.map .pin.hot.lbl-left,.map .pin.brand,.map .pin.brand.lbl-left{transform:translate(-10px,-50%);transform-origin:0 0}
 .map .pin .lbl{position:absolute;top:50%;left:calc(100% + 7px);right:auto;transform:translateY(-50%);pointer-events:none}
 .map .pin.lbl-left .lbl{left:auto;right:calc(100% + 7px)}
-@media (max-width:700px){ .map .pin,.map .pin.lbl-left{transform:translate(-14px,-50%);transform-origin:14px 50%} .map .pin.venue,.map .pin.venue.lbl-left{transform:translate(-7px,-50%);transform-origin:7px 50%} .map .pin.hot,.map .pin.hot.lbl-left,.map .pin.brand,.map .pin.brand.lbl-left{transform:translate(-8px,-50%);transform-origin:8px 50%} }
+@media (max-width:700px){ .map .pin,.map .pin.lbl-left{transform:translate(-14px,-50%);transform-origin:0 0} .map .pin.venue,.map .pin.venue.lbl-left{transform:translate(-7px,-50%);transform-origin:0 0} .map .pin.hot,.map .pin.hot.lbl-left,.map .pin.brand,.map .pin.brand.lbl-left{transform:translate(-8px,-50%);transform-origin:0 0} }
 </style></head><body>
 
 <div class="wrap">

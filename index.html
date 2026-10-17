@@ -206,6 +206,14 @@ footer a{text-decoration:none} footer a:hover{color:var(--fg)}
 .lang button:hover{background:var(--accent);color:var(--on-accent)}
 @media (max-width:760px){ .lang{border-left:0;margin-left:auto} .lang button{padding:12px 12px} }
 .cc .pill.b{border-style:dashed}
+
+/* pin box = dot only; label floats outside so hover never moves the pin */
+.map .pin,.map .pin.lbl-left{flex-direction:row;transform:translate(-17px,-50%);transform-origin:17px 50%}
+.map .pin.venue,.map .pin.venue.lbl-left{transform:translate(-9px,-50%);transform-origin:9px 50%}
+.map .pin.hot,.map .pin.hot.lbl-left,.map .pin.brand,.map .pin.brand.lbl-left{transform:translate(-10px,-50%);transform-origin:10px 50%}
+.map .pin .lbl{position:absolute;top:50%;left:calc(100% + 7px);right:auto;transform:translateY(-50%);pointer-events:none}
+.map .pin.lbl-left .lbl{left:auto;right:calc(100% + 7px)}
+@media (max-width:700px){ .map .pin,.map .pin.lbl-left{transform:translate(-14px,-50%);transform-origin:14px 50%} .map .pin.venue,.map .pin.venue.lbl-left{transform:translate(-7px,-50%);transform-origin:7px 50%} .map .pin.hot,.map .pin.hot.lbl-left,.map .pin.brand,.map .pin.brand.lbl-left{transform:translate(-8px,-50%);transform-origin:8px 50%} }
 </style></head><body>
 
 <div class="wrap">
